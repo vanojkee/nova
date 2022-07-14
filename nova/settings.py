@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
-
+from dotenv import load_dotenv
+import os
 import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -21,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-t_k6he+r@3g4!4#hc=fbo4wzbgn#l=a*@p32+3ir*#^1l^ch1*'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -123,7 +124,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Bot settings
 NOVA_URL = "https://s1-nova.ru/app/private_test_python/"
 
-API_TOKEN = '5596302371:AAHE6nIU86IJRqdLBP6_R57Ry2r_g0otKsE'
+API_TOKEN = os.getenv('API_TOKEN')
 
 # webhook settings
 WEBHOOK_HOST = 'https://0f54-85-107-4-132.ngrok.io'
@@ -133,7 +134,6 @@ WEBHOOK_URL = f"{WEBHOOK_HOST}{WEBHOOK_PATH}"
 # webserver settings
 WEBAPP_HOST = 'localhost'  # or ip
 WEBAPP_PORT = 3001
-
 
 # Heroku settings
 django_heroku.settings(locals())

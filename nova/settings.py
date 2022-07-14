@@ -128,12 +128,12 @@ NOVA_URL = "https://s1-nova.ru/app/private_test_python/"
 API_TOKEN = os.getenv('API_TOKEN')
 
 # webhook settings
-WEBHOOK_HOST = 'https://nova-tgbot.herokuapp.com'
+WEBHOOK_HOST = 'https://nova-tgbot.herokuapp.com/'
 WEBHOOK_PATH = ''
 WEBHOOK_URL = f"{WEBHOOK_HOST}{WEBHOOK_PATH}"
 
 # webserver settings
-WEBAPP_HOST = '0.0.0.0'  # or ip
+WEBAPP_HOST = 'localhost'  # or ip
 WEBAPP_PORT = os.getenv('PORT', default=8000)
 
 # Heroku settings

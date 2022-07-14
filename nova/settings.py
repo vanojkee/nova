@@ -129,7 +129,7 @@ API_TOKEN = '5596302371:AAHE6nIU86IJRqdLBP6_R57Ry2r_g0otKsE'
 
 # webhook settings
 WEBHOOK_HOST = 'https://nova-tgbot.herokuapp.com/'
-WEBHOOK_PATH = ''
+WEBHOOK_PATH = 'secret'
 WEBHOOK_URL = f"{WEBHOOK_HOST}{WEBHOOK_PATH}"
 
 # webserver settings

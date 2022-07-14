@@ -15,6 +15,7 @@ from dotenv import load_dotenv
 import os
 import django_heroku
 
+load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -127,12 +128,12 @@ NOVA_URL = "https://s1-nova.ru/app/private_test_python/"
 API_TOKEN = os.getenv('API_TOKEN')
 
 # webhook settings
-WEBHOOK_HOST = 'https://0f54-85-107-4-132.ngrok.io'
+WEBHOOK_HOST = 'https://nova-tgbot.herokuapp.com'
 WEBHOOK_PATH = ''
 WEBHOOK_URL = f"{WEBHOOK_HOST}{WEBHOOK_PATH}"
 
 # webserver settings
-WEBAPP_HOST = 'localhost'  # or ip
+WEBAPP_HOST = '54.208.186.182'  # or ip
 WEBAPP_PORT = 3001
 
 # Heroku settings

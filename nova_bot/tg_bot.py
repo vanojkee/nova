@@ -38,7 +38,11 @@ async def contact(message: types.Message):
     current_user = Users.objects.get(user_id=message.from_user.id)
     current_user.phone = message.contact['phone_number']
     current_user.save()
-    requests.post(url=NOVA_URL, data={"phone": message.contact["phone_number"], "login": message.from_user.username})
+    requests.post(
+        url=NOVA_URL,
+        data={"phone": message.contact["phone_number"],
+              "login": message.from_user.username}
+    )
 
 
 async def on_shutdown(dp):

@@ -1,1 +1,1 @@
-web: gunicorn nova.wsgi --log-file -
+web: python run_bot.py
